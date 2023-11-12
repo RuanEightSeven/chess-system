@@ -16,7 +16,14 @@ public class UI {
             }
             System.out.println();
             //após imprimir uma linha completa, pulamos para a proxima linha
+
+
+
         }
+
+        //Imprimir os indices com letras
+
+        System.out.println("  a b c d e f g h");
     }
 
     private static void printPiece(ChessPiece piece){
