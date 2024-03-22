@@ -56,6 +56,27 @@ public class UI {
         System.out.flush();
     }
 
+    public final static void clearConsole()
+    {
+        try
+        {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  Handle any exceptions.
+        }
+    }
+
     public static ChessPosition readChessPosition(Scanner sc){
         try {
             String s = sc.nextLine();

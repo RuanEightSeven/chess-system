@@ -17,23 +17,19 @@ public class Program {
 
         while(true) {
             try {
-                UI.clearScreen();
+                UI.clearConsole();
                 UI.printBoard(chessMatch.getPieces());
                 System.out.println();
-                System.out.println("Source:");
+                System.out.print("Source:");
                 ChessPosition source = UI.readChessPosition(sc);
 
                 System.out.println();
-                System.out.println("Target:");
+                System.out.print("Target:");
                 ChessPosition target = UI.readChessPosition(sc);
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
             }
-            catch (ChessException e){
-                System.out.println(e.getMessage());
-                sc.nextLine();
-            }
-            catch (InputMismatchException e){
+            catch (ChessException | InputMismatchException e){
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
